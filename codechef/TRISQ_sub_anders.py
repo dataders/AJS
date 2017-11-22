@@ -1,5 +1,5 @@
-chef = 'codechef/TRISQ_test.txt'
-lines = [int(line.rstrip('\n')) for line in open(chef)]
+from sys import stdin
+lines = [int(line.rstrip('\n')) for line in stdin]
 
 T = lines[0]
 C = lines[1:]
