@@ -1,6 +1,8 @@
-chef = 'TRISQ_test.txt'
+chef = 'codechef/TRISQ_test.txt'
 
-lines = [line.rstrip('\n') for line in open(chef)]
-T = int(lines[0])
-C = int(lines[1:])
+lines = [int(line.rstrip('\n')) for line in open(chef)]
+print(lines)
+
+T = lines[0]
+C = lines[1:]
 print(T,C)
