@@ -1,3 +1,2 @@
-n = input()
-
-print(n)
+T = input()
+print(T)
