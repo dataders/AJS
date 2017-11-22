@@ -12,11 +12,12 @@ C = lines[1:]
 print(T,C)
 
 from math import fmod
-t = int(input())
 AnsList = []
-for i in range(t):
-    b = int(input())
-    ans = fmod((b^2/2),4)
+for i in C:
+    ans = fmod((i^2/2),4)
     AnsList.append(ans)
+	print(i)
+
+
 for i in AnsList:
-    print(i)
+	print(i)
