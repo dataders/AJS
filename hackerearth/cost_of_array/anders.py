@@ -14,7 +14,6 @@ cost = [[0 for x in range(N)] for y in range(N)]
 for i in range(len(the_rest)):
     cost[i] = [int(x) for x in the_rest[i].split()]
 
-<<<<<<< HEAD
 print(cost[0][0], cost, sep='\n')
 
 dot_og = sum([A[i]*B[i] for i in range(N)])
@@ -25,7 +24,3 @@ dot_new = sum([A_new[i]*B[i] for i in range(N)])
 
 
 print(dot_og, dot_new)
-=======
-print(cost[0][0],cost,sep= '\n')
-
->>>>>>> a4f152b4e51b82dc7e2459f7a41e432bc85ca377
