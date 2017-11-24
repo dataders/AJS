@@ -21,6 +21,8 @@ B_sort = sorted(B)
 
 print("A:",A,"B:",B,"B sorted:",B_sort,"cost matrix:", cost, sep='\n')
 
+B_sort
+
 # dot_og = sum([A[i]*B[i] for i in range(N)])
 
 # A_new = A
