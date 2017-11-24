@@ -1,3 +1,5 @@
+from operator import itemgetter
+
 def readInput(testNum):
     test = 'hackerearth/cost_of_array/test{}.txt'.format(str(testNum))
     lines = [line.rstrip('\n') for line in open(test)]
@@ -17,22 +19,27 @@ def readInput(testNum):
     return A,B,N,cost
 
 A, B, N, cost = readInput(2)
-B_sort = sorted(B)
 
-print("A:",A,"B:",B,"B sorted:",B_sort,"cost matrix:", cost, sep='\n')
+A_rank = [t[0] for t in sorted(enumerate(A),
+                                key=itemgetter(1),
+                                reverse=True)]
+B_rank = [t[0] for t in sorted(enumerate(B),
+                                key=itemgetter(1),
+                                reverse=True)]
 
-B_sort
-
-# dot_og = sum([A[i]*B[i] for i in range(N)])
-
-# A_new = A
-# A_new[0], A_new[2] = A_new[2], A_new[0]
-# dot_new = sum([A_new[i]*B[i] for i in range(N)])
-
-
-# print("dot products", dot_og, dot_new, sep='\n')
-
-
-
+print("A:", A,
+    "A rank", A_rank,
+    sep='\n')
+print("B:", B,
+    "B rank", B_rank,
+    sep='\n')
+# print("cost matrix:", cost, sep='\n')
 
 
+x = A_rank.index(3)
+y = A_rank.index(0)
+print(x,y, sep=' ')
+
+A_2 = A
+A_2[x], A_2[y] = A_2[y], A_2[x]
+print(A_2)
