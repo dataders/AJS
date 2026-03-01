@@ -93,11 +93,11 @@ def solve():
 
     # --- Decision variables ---
 
-    # w[r,c] = 1 if we place a wall at (r,c)
+    # w[r,c] = 1 if we place a wall at (r,c) — only plain grass tiles
     w = {}
     for r, c in non_water:
-        if (r, c) == horse_pos:
-            continue  # Can't wall the horse
+        if GRID[r][c] != '.':
+            continue  # Can only place walls on grass (not horse, cherry, or bee)
         w[r, c] = pulp.LpVariable(f"w_{r}_{c}", cat="Binary")
 
     # e[r,c] = 1 if tile (r,c) is escapable (reachable from edge)
